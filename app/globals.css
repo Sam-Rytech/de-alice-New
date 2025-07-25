@@ -26,3 +26,6 @@
 .PrimaryB{
     background-color: #ea0f0a;
 }
+.shadow-custom {
+    box-shadow: 0 4px 54px 10px rgba(18, 19, 21, 0.06)
+}

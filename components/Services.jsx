@@ -1,16 +1,20 @@
-"use client";
-import { useState } from "react";
-import { Tabs, TabsContent, TabsTrigger, TabsList, } from "./ui/tabs";
-import Button from "./Button";
+'use client'
+import { useState } from 'react'
+import { Tabs, TabsContent, TabsTrigger, TabsList } from './ui/tabs'
+import Button from './Button'
 
-import { PiWallFill, PiPaintRollerFill, PiWrenchFill, PiUserGearFill } from "react-icons/pi";
+import {
+  PiWallFill,
+  PiPaintRollerFill,
+  PiWrenchFill,
+  PiUserGearFill,
+} from 'react-icons/pi'
 
-
-const servicesData = [
+const serviceData = [
   {
-    name: 'contruction',
+    name: 'construction',
     icons: <PiWallFill />,
-    title: 'Construction services',
+    title: 'Repair services',
     description:
       'We provide top-notch construction services for residential and commercial projects.',
     serviceList: [
@@ -27,7 +31,7 @@ const servicesData = [
     ],
   },
   {
-    name: 'contruction',
+    name: 'construction-general',
     icons: <PiPaintRollerFill />,
     title: 'Construction services',
     description:
@@ -46,9 +50,9 @@ const servicesData = [
     ],
   },
   {
-    name: 'contruction',
+    name: 'construction-painting',
     icons: <PiWrenchFill />,
-    title: 'Construction services',
+    title: 'painting services',
     description:
       'We provide top-notch construction services for residential and commercial projects.',
     serviceList: [
@@ -65,9 +69,9 @@ const servicesData = [
     ],
   },
   {
-    name: 'contruction',
+    name: 'construction-management',
     icons: <PiUserGearFill />,
-    title: 'Construction services',
+    title: 'management-services',
     description:
       'We provide top-notch construction services for residential and commercial projects.',
     serviceList: [
@@ -86,7 +90,7 @@ const servicesData = [
 ]
 
 const Services = () => {
-  const [activeTab, setActiveTab] = useState("construction");
+  const [activeTab, setActiveTab] = useState("construction")
   return (
     <section id="services" className="pt-16 xl:pt-32">
       <div className="container mx-auto">
@@ -100,20 +104,34 @@ const Services = () => {
 
         {/* tabs */}
 
-        <Tabs defaultValue="Construction" className="">
-          <TabsList className="grid w-full grid-cols-2">
-            {servicesData.map((item) => {
-              return <TabsTrigger></TabsTrigger>
+        <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value)}>
+          <TabsList className="grid w-full grid-cols-2 h-full">
+            {serviceData.map((item) => {
+              return (
+                <TabsTrigger
+                  key={item.name}
+                  value={item.name}
+                  className="w-full rounded-none h-[100px] flex items-center relative shadow-custom p-0 outline-none cursor-pointer"
+                >
+                  <div
+                    className={`w-[100px] h-[100px] flex items-center justify-center absolute left-0 ${
+                      activeTab === item.name
+                        ? 'bg-black text-white'
+                        : 'PrimaryB text-black'
+                    }`}
+                  >
+                    {item.icons}
+                  </div>
+                </TabsTrigger>
+              )
             })}
           </TabsList>
-          <TabsContent value="account">
-          </TabsContent>
-          <TabsContent value="password">
-          </TabsContent>
+          <TabsContent value="account">account</TabsContent>
+          <TabsContent value="password">password</TabsContent>
         </Tabs>
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default Services

@@ -35,7 +35,7 @@ const Header = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          {/* <Logo /> */}
+          <Logo />
 
           {/* nav & button */}
           <nav className="hidden xl:flex items-center gap-12">

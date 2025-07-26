@@ -9,6 +9,7 @@ import {
   PiWrenchFill,
   PiUserGearFill,
 } from 'react-icons/pi'
+import Pretitle from './Pretitle'
 
 const serviceData = [
   {
@@ -26,8 +27,8 @@ const serviceData = [
       'Structural Engineering',
     ],
     thumbs: [
-      { url: '../assets/services/1.jpg', alt: 'Construction Image 1' },
-      { url: '../assets/services/2.jpg', alt: 'Construction Image 2' },
+      { url: './assets/img/truck.jpg', alt: 'Construction Image 1' },
+      { url: './assets/img/gold-mine.jpg', alt: 'Construction Image 2' },
     ],
   },
   {
@@ -45,8 +46,8 @@ const serviceData = [
       'Structural Engineering',
     ],
     thumbs: [
-      { url: '../assets/services/1.jpg', alt: 'Construction Image 1' },
-      { url: '../assets/services/2.jpg', alt: 'Construction Image 2' },
+      { url: './assets/img/gems.jpg', alt: 'Construction Image 1' },
+      { url: './assets/img/open-pit-mining.jpg', alt: 'Construction Image 2' },
     ],
   },
   {
@@ -64,12 +65,12 @@ const serviceData = [
       'Structural Engineering',
     ],
     thumbs: [
-      { url: '../assets/services/1.jpg', alt: 'Construction Image 1' },
-      { url: '../assets/services/2.jpg', alt: 'Construction Image 2' },
+      { url: './assets/img/excavator-bucket.jpg', alt: 'Construction Image 1' },
+      { url: './assets/img/truck.jpg', alt: 'Construction Image 2' },
     ],
   },
   {
-    name: 'construction-management',
+    name: 'construction-man',
     icons: <PiUserGearFill />,
     title: 'management-services',
     description:
@@ -83,18 +84,19 @@ const serviceData = [
       'Structural Engineering',
     ],
     thumbs: [
-      { url: '../assets/services/1.jpg', alt: 'Construction Image 1' },
-      { url: '../assets/services/2.jpg', alt: 'Construction Image 2' },
+      { url: './assets/img/excavator.jpg', alt: 'Construction Image 1' },
+      { url: './assets/img/truck.jpg', alt: 'Construction Image 2' },
     ],
   },
 ]
 
 const Services = () => {
-  const [activeTab, setActiveTab] = useState("construction")
+  const [activeTab, setActiveTab] = useState('construction')
   return (
     <section id="services" className="pt-16 xl:pt-32">
       <div className="container mx-auto">
-        <div>
+        <div className='text-center max-w-[540px] mx-auto mb-20'>
+          <Pretitle text="Our Services" center/>
           <h2 className="h2 mb-3">Solutions We Provide</h2>
           <p className="mb-11 max-w-[488px] mx-auto">
             Offering tailored construction solutions, from planning to
@@ -104,8 +106,8 @@ const Services = () => {
 
         {/* tabs */}
 
-        <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value)}>
-          <TabsList className="grid w-full grid-cols-2 h-full">
+        <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value)} className="flex flex-col xl:flex-row w-full gap-[30px]">
+          <TabsList className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-[30px] h-full w-full rounded-none p-0 bg-transparent xl:w-[345px]">
             {serviceData.map((item) => {
               return (
                 <TabsTrigger
@@ -120,14 +122,46 @@ const Services = () => {
                         : 'PrimaryB text-black'
                     }`}
                   >
-                    {item.icons}
+                    <div className="text-5xl">{item.icons}</div>
+                  </div>
+                  <div className="uppercase text-base font-semibold tracking-[.6px] w-[100px] ml-16x">
+                    {item.name}
                   </div>
                 </TabsTrigger>
               )
             })}
           </TabsList>
-          <TabsContent value="account">account</TabsContent>
-          <TabsContent value="password">password</TabsContent>
+          {/* tabs content */}
+          <div className="flex-1 bg-white shadow-custom h-[490px] p-[30px]">
+            {serviceData.map((item) => (
+              <TabsContent key={item.name} value={item.name} className="m-0">
+                <div>
+                  {/* images */}
+                  <div className="flex md:flex-col gap-5 xl:gap-[30px]">
+                    {item.thumbs.map((thumb, index) => (
+                      <div
+                        key={index}
+                        className="relative w-[140px] xl:w-[200px] h-[140px] xl:h-[200px] "
+                      >
+                        <img
+                          src={thumb.url}
+                          alt=""
+                          fill="true"
+                          className="w-[140px] xl:w-[200px] h-[140px] xl:h-[200px]"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  {/* text & button */}
+                  <div>
+                    <div>
+                      <h3 className='h3 mb-6'>{item.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              </TabsContent>
+            ))}
+          </div>
         </Tabs>
       </div>
     </section>

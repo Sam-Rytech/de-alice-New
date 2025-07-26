@@ -7,29 +7,25 @@ const workData = [
   {
     img: './assets/img/truck.jpg',
     name: 'Trucking',
-    description:
-      'We provide top-notch trucking services for all your transportation needs.',
+    description: 'Very short description',
     href: '',
   },
   {
     img: './assets/img/gold-mine.jpg',
     name: 'Mining',
-    description:
-      'We provide top-notch mining services for all your extraction needs.',
+    description: 'Very short description',
     href: '',
   },
   {
     img: './assets/img/gems.jpg',
     name: 'Gemstone Mining',
-    description:
-      'We provide top-notch gemstone mining services for all your precious stone needs.',
+    description: 'Very short description',
     href: '',
   },
   {
     img: './assets/img/open-pit-mining.jpg',
     name: 'Open Pit Mining',
-    description:
-      'We provide top-notch open pit mining services for large scale extraction.',
+    description: 'Very short description',
     href: '',
   },
 ]
@@ -41,7 +37,7 @@ const Work = () => {
         <div className="text-center max-w-[540px] mx-auto xl:mb-center20">
           <Pretitle text="Our work" center />
           <h2 className="h2 mb-3">Discover Our Projects</h2>
-          <p className='mb-11 max-w-[480px] mx-auto'>
+          <p className="mb-11 max-w-[480px] mx-auto">
             Providing expert services designer to deliver quality and innovation
             in every project we undertake
           </p>
@@ -57,21 +53,29 @@ const Work = () => {
               <img
                 src={item.img}
                 alt={item.name}
-                fill
+                fill="true"
                 className="object-cover"
                 quality={100}
               />
-              <div>
-                <div>
-                  <h4>{item.name}</h4>
-                  <div>
-                    <RiCheckboxCircleFill className=''/>
+              <div className="w-[90%] h-[84px] bg-black absolute bottom-4 flex justify-between items-center text-white md:translate-y-[108px] md:group-hover:translate-y-0 transition-all duration-500">
+                <div className="pl-8">
+                  <h4 className="text-white font-semibold tracking-[1px] uppercase">
+                    {item.name}
+                  </h4>
+                  <div className="flex items-center gap-1">
+                    <RiCheckboxCircleFill className="Primary text-xl" />
                     <p>{item.description}</p>
                   </div>
                 </div>
+                <Link
+                  href={item.href}
+                  className="w-[44px] xl:w-[60px] xl:h-[60px] h-[44px] PrimaryB text-black text-2xl flex justify-center items-center absolute right-3"
+                >
+                  <RiArrowRightUpLine />
+                </Link>
               </div>
             </div>
-          );
+          )
         })}
       </div>
     </div>

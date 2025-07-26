@@ -3,7 +3,7 @@ import { RiArrowRightUpLine } from 'react-icons/ri'
 
 const Button = ({ text }) => {
   return (
-    <button className="w-[210px] h-[54px] pl-[10px] py-[5px] pr-[5px] flex items-center justify-between min-w-[200px] gropup PrimaryB">
+    <button className="w-[210px] h-[54px] pl-[10px] py-[5px] pr-[5px] flex items-center justify-between min-w-[200px] group PrimaryB">
       <div className="flex-1 text-center tracking-[1.2px] font-bold text-sm uppercase text-black">
         {text}
       </div>

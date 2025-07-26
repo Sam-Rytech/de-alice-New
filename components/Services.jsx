@@ -39,7 +39,7 @@ const serviceData = [
       'We provide top-notch construction services for residential and commercial projects.',
     serviceList: [
       'Residential Construction',
-      'Commercial Construction',
+      'Commercial Constr',
       'Renovations and Remodeling',
       'Project Management',
       'Site Preparation',
@@ -58,7 +58,7 @@ const serviceData = [
       'We provide top-notch construction services for residential and commercial projects.',
     serviceList: [
       'Residential Construction',
-      'Commercial Construction',
+      'Commercial ruction',
       'Renovations and Remodeling',
       'Project Management',
       'Site Preparation',
@@ -77,7 +77,7 @@ const serviceData = [
       'We provide top-notch construction services for residential and commercial projects.',
     serviceList: [
       'Residential Construction',
-      'Commercial Construction',
+      'Commercial',
       'Renovations and Remodeling',
       'Project Management',
       'Site Preparation',
@@ -135,7 +135,7 @@ const Services = () => {
           <div className="flex-1 bg-white shadow-custom h-[490px] p-[30px]">
             {serviceData.map((item) => (
               <TabsContent key={item.name} value={item.name} className="m-0">
-                <div>
+                <div className='flex flex-col md:flex-row gap-[30px]'>
                   {/* images */}
                   <div className="flex md:flex-col gap-5 xl:gap-[30px]">
                     {item.thumbs.map((thumb, index) => (
@@ -156,6 +156,18 @@ const Services = () => {
                   <div>
                     <div>
                       <h3 className='h3 mb-6'>{item.title}</h3>
+                      <p className='mb-10'>{item.description}</p>
+                      {/* service list */}
+                      <ul className='grid grid-cols-2 gap-4 mb-12'>
+                        {item.serviceList.map((service, index) => {
+                          return <li key={index} className='flex items-center gap-4'>
+                            <div className='w-[6px] h-[6px] PrimaryB'></div>
+                            <div className='capitalize font-medium text-black'>{service}</div>
+                          </li>
+                        })}
+                      </ul>
+                      {/* btn */}
+                      <Button text="Read more"/>
                     </div>
                   </div>
                 </div>

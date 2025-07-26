@@ -28,9 +28,11 @@ const Testimonial = () => {
                 quality={100}
               />
             </div>
-            <div className="xl:absolute xl:bottom-0 xl:right-[260px] relative max-w-max bg-amber-300">
+            <div className="xl:absolute xl:bottom-0 xl:right-[160px] relative max-w-max">
+              
+              {/* quote icon img */}
+              <img src="./assets/img/quote.png" width={54} height={36} alt='' className='absolute z-20 -top-5 left-[60px] Primary'/>
               <Slider />
-              Slider
             </div>
           </div>
         </div>

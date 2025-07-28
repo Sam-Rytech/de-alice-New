@@ -5,7 +5,7 @@ const FaqItem = ({ title, description }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="w-full border-b">
+    <div className="w-full border-b secondaryb">
       <div className="flex items-center justify-between py-6">
         <h4 className="h4 max-w-[300px] sm:max-w-md md:max-w-max">{title}</h4>
         <button

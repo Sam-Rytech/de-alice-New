@@ -26,6 +26,15 @@
 .PrimaryB{
     background-color: #ea0f0a;
 }
+.Primaryb{
+    border-color:#ea0f0a;
+}
+.secondary{
+    color:#666666;
+}
+.secondaryb{
+    border-color:#666666;
+}
 .shadow-custom {
     box-shadow: 0 4px 54px 10px rgba(18, 19, 21, 0.06)
 }

@@ -55,13 +55,13 @@ const Faq = () => {
           </p>
         </div>
         {/* faq items */}
-        <ul>
+        <ul className='w-full flex flex-col'>
           {faqItemData.map((item, index) => {
             return (
               <li key={index}>
-                <FaqItem title={item.title} description={item.description}/>
+                <FaqItem title={item.title} description={item.description} />
               </li>
-            )
+            );
           })}
         </ul>
       </div>

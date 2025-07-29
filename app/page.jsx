@@ -55,10 +55,6 @@ const Home = () => {
       <Services />
       <Contact />
       <Footer />
-
-      {/* temp div */}
-
-      <div className="j-[1000px]"></div>
     </div>
   );
 };

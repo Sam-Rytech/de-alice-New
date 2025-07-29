@@ -27,7 +27,7 @@ const socials = [
   },
 ];
 
-const Socials = ({ containerStyles }) => {
+const Socials = ({ containerStyles, iconStyles }) => {
   return (
     <section
       className={cn(
@@ -38,7 +38,7 @@ const Socials = ({ containerStyles }) => {
       <ul className="flex justify-center xl:justify-end gap-12">
         {socials.map((social, index) => (
           <li key={index} className="text-2xl">
-            <Link href={social.path} target="_blank" rel="noopener noreferrer">
+            <Link href={social.path} target="_blank" rel="noopener noreferrer" className={iconStyles}>
               {social.icon}
             </Link>
           </li>

@@ -39,7 +39,7 @@ const Form = () => {
       <div className="flex flex-col gap-6">
         {/* text Area */}
         <Textarea
-          className="h-[180px] resize-none text-[#666666]  rounded-none"
+          className="h-[180px] resize-none rounded-none"
           placeholder="Enter your message"
         />
         {/* btn */}

@@ -1,5 +1,5 @@
 import Pretitle from './Pretitle'
-import { motion } from 'framer-motion'
+import {delay, motion } from 'framer-motion'
 import { fadeIn } from '../variants'
 import { Description } from '@radix-ui/react-dialog'
 import FaqItem from './FaqItem'

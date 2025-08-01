@@ -2,10 +2,19 @@ import { RiChat1Line, RiMapPin2Line, RiSmartphoneLine } from 'react-icons/ri'
 import Socials from './Socials'
 import Form from './Form'
 
+import { motion } from 'framer-motion'
+import { fadeIn } from '../variants'
+
 const Contact = () => {
   return (
     <section id="contact" className="pt-16 xl:pt-32 px-4">
-      <div className="container mx-auto">
+      <motion.div
+        variants={fadeIn('up', 0.1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.2 }}
+        className="container mx-auto"
+      >
         <div className="w-full xl:h-[730px] shadow-custom p-4 xl:p-8 xl:px-[90px] xl:py-[36px] border-t-4 Primaryb">
           <div className="flex flex-col xl:flex-row h-full gap-[40px] xl:gap-[90px]">
             {/* info */}
@@ -16,7 +25,7 @@ const Contact = () => {
                 hendrerit enim non neque blandit.
               </p>
               {/* contact items */}
-              <div className='flex flex-col gap-[40px] mb-16'>
+              <div className="flex flex-col gap-[40px] mb-16">
                 {/* contact item */}
                 <div className="flex items-start gap-[20px]">
                   <div>
@@ -63,7 +72,10 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              <Socials containerStyles="flex gap-[40px] text-black" iconStyles="text-[20px]"/>
+              <Socials
+                containerStyles="flex gap-[40px] text-black"
+                iconStyles="text-[20px]"
+              />
             </div>
             {/* form */}
             <div className="flex-1">
@@ -77,7 +89,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

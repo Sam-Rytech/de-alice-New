@@ -29,7 +29,7 @@ const Home = () => {
   console.log(headerActive);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Topbar />
 
       {/* Static Header */}

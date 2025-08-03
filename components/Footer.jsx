@@ -12,6 +12,7 @@ import Socials from './Socials'
 
 import { motion } from 'framer-motion'
 import { fadeIn } from '../variants'
+import Image from 'next/image'
 
 const Footer = () => {
   return (
@@ -27,7 +28,7 @@ const Footer = () => {
           {/* logo and text */}
           <div className="flex-1">
             <Link href="/" className="flex mb-6">
-              <img src="/LogoW.png" width={230} height={48} alt="" />
+              <Image src="/LogoW.png" width={230} height={48} alt="" />
             </Link>
             <p className="text-white max-w-[270px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean

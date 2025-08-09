@@ -1,5 +1,6 @@
 import Pretitle from './Pretitle'
 import Button from './Button'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../variants'
 
@@ -45,7 +46,7 @@ const About = () => {
             <div className="xl:w-[444px] xl:h-[493px] relative">
               {/* BG */}
               <div className="hidden xl:flex w-[444px] h-[450px] PrimaryB absolute -top-4 -left-4 -z-10"></div>
-              <imgzz
+              <img
                 src={'/assets/img/worker.jpg'}
                 width={444}
                 // height={493}
